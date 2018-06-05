@@ -10,7 +10,7 @@
                     <router-link to="/portfolio" activeClass="active" tag="li"><a>Портфель</a></router-link>
                     <router-link to="/stocks" activeClass="active" tag="li"><a>Акции</a></router-link>
                 </ul>
-
+                <strong class="navbar-text navbar-right">Капитал {{ funds }}</strong>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#">Конец дня</a></li>
                     <li class="dropdown">
@@ -30,7 +30,13 @@
 </template>
 
 <script>
-
+    export default {
+        computed: {
+            funds() {
+                return this.$store.getters.funds
+            }
+        }
+    }
 </script>
 
 <style scoped>
